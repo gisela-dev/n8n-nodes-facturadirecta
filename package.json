@@ -1,1 +1,62 @@
- 
+{
+  "name": "n8n-nodes-facturadirecta",
+  "version": "1.0.0",
+  "description": "n8n community node for FacturaDirecta API integration - billing and accounting operations",
+  "keywords": [
+    "n8n-community-node-package",
+    "facturadirecta",
+    "invoicing",
+    "billing",
+    "accounting",
+    "spain",
+    "api"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/gisela-dev/n8n-nodes-facturadirecta#readme",
+  "author": {
+    "name": "Gisela",
+    "email": "gisela@giselabravo.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gisela-dev/n8n-nodes-facturadirecta.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gisela-dev/n8n-nodes-facturadirecta/issues"
+  },
+  "engines": {
+    "node": ">=18.17.0"
+  },
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc && gulp build:icons",
+    "dev": "tsc --watch",
+    "format": "prettier nodes credentials --write",
+    "lint": "eslint nodes credentials package.json",
+    "lintfix": "eslint nodes credentials package.json --fix",
+    "prepublishOnly": "npm run build && npm run lint"
+  },
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/FacturaDirectaApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/FacturaDirecta/FacturaDirecta.node.js"
+    ]
+  },
+  "devDependencies": {
+    "@typescript-eslint/parser": "^7.15.0",
+    "eslint": "^8.56.0",
+    "eslint-plugin-n8n-nodes-base": "^1.16.1",
+    "gulp": "^4.0.2",
+    "prettier": "^3.3.2",
+    "typescript": "^5.5.3"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  }
+} 
